@@ -120,7 +120,7 @@ export default function HomePage() {
                   TechieSchool is an online tech education platform that offers industry-aligned, cohort-based programs designed to accelerate your tech career through hands-on learning and community support. Their courses are led by industry professionals and focus on building real-world projects to ensure job readiness.
                   </p>
                   <p className="mt-4 text-muted-foreground">
-                    Try clicking on the different menu items in the sidebar to see the content change.
+                    Techie School yet to update
                   </p>
                 </div>
               </div>
