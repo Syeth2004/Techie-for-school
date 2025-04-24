@@ -115,7 +115,7 @@ export default function HomePage() {
             {activeSection === "home" && (
               <div className="mx-auto max-w-4xl">
                 <div className="rounded-lg border bg-card p-8 shadow">
-                  <h2 className="text-2xl font-bold">Welcome to TechieSchool</h2>
+                  <h2 className="text-2xl font-bold">Welcome to Techie School</h2>
                   <p className="mt-4 text-muted-foreground">
                   TechieSchool is an online tech education platform that offers industry-aligned, cohort-based programs designed to accelerate your tech career through hands-on learning and community support. Their courses are led by industry professionals and focus on building real-world projects to ensure job readiness.
                   </p>
