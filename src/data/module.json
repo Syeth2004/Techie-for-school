@@ -1,0 +1,43 @@
+[
+  {
+    "id": "1",
+    "title": "2 Day Generative AI Mastermind",
+    "date": "2025-05-14T00:00:00.000Z",
+    "type": "live",
+    "description": "Live session with industry experts"
+  },
+  {
+    "id": "2",
+    "title": "Assignment: AI Model Training",
+    "date": "2025-05-15T00:00:00.000Z",
+    "type": "assignment",
+    "description": "Submit your trained model by end of day"
+  },
+  {
+    "id": "3",
+    "title": "Q&A Session",
+    "date": "2025-05-16T00:00:00.000Z",
+    "type": "live",
+    "description": "Live Q&A with instructors"
+  },
+  {
+    "id": "4",
+    "title": "Final Project Submission",
+    "date": "2025-05-17T00:00:00.000Z",
+    "type": "assignment"
+  },
+  {
+    "id": "5",
+    "title": "2 Day Generative AI Mastermind",
+    "date": "2025-05-18T00:00:00.000Z",
+    "type": "workshop",
+    "description": "18th - 19th May'25"
+  },
+  {
+    "id": "6",
+    "title": "2 Day Generative AI Mastermind",
+    "date": "2025-05-20T00:00:00.000Z",
+    "type": "workshop",
+    "description": "20th - 22th May'25"
+  }
+]

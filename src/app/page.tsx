@@ -1,5 +1,4 @@
 "use client"
-import { Calendar } from "@/components/ui/calendar"
 import { useState } from "react"
 import { BookOpen, Home, LayoutDashboard,} from "lucide-react"
 import {
@@ -19,16 +18,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import * as React from "react"
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
+import Link from "next/link"
+import DashBoardForEvent from "@/app/dashboardforevent/page"
 
 
 
@@ -39,8 +30,7 @@ const events = [
     title: "2 Day Generative AI Mastermind",
     date: "19th-20th April'25",
     category: "UpSkilling",
-    image:
-      "https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     organizer: "Mentors from GrowthSchool and OutSkills",
   },
   {
@@ -48,8 +38,7 @@ const events = [
     title: "4 Day Generative AI Mastermind",
     date: "21th-25th April'25",
     category: "UpSkilling",
-    image:
-      "https://images.unsplash.com/photo-1669023414171-56f0740e34cd?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1669023414171-56f0740e34cd?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     organizer: "Mentors from GrowthSchool and OutSkills",
   },
   {
@@ -57,8 +46,7 @@ const events = [
     title: "5 Day Generative AI Mastermind",
     date: "26th-30th April'25",
     category: "UpSkilling",
-    image:
-      "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     organizer: "Mentors from GrowthSchool and OutSkills",
   },
 ]
@@ -71,12 +59,12 @@ export default function HomePage() {
   return (
     <SidebarProvider>
       <div className="flex min-h-screen">
-        <Sidebar>
+        <Sidebar collapsible="icon">
           <SidebarHeader className="border-b border-sidebar-border">
             <div className="flex h-16 items-center px-8">
               <div className="flex items-center gap-2 font-semibold">
               <Avatar className="h-12 w-12">
-                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarImage src="https://github.com/shadcn.png" /> 
                 <AvatarFallback>TFS</AvatarFallback>
               </Avatar>
               </div>
@@ -85,7 +73,7 @@ export default function HomePage() {
           <SidebarContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton isActive={activeSection === "home"} onClick={() => setActiveSection("dashboard")}>
+                <SidebarMenuButton isActive={activeSection === "home"} onClick={() => setActiveSection("home")}>
                   <Home className="h-5 w-5" />
                   <span>Home</span>
                 </SidebarMenuButton>
@@ -136,36 +124,11 @@ export default function HomePage() {
                     Try clicking on the different menu items in the sidebar to see the content change.
                   </p>
                 </div>
-                <Sheet>
-                  <SheetTrigger>
-                     Open
-                  </SheetTrigger>
-                    <SheetContent>
-                      <SheetHeader>
-                        <SheetTitle>Your Course schdule </SheetTitle>
-                          <Calendar
-                            mode="single"
-                            selected={date}
-                            onSelect={setDate}
-                            className="rounded-lg border shadow"
-                          />
-                      </SheetHeader>
-                        <div className="grid gap-4 py-4">
-                          <div className="grid grid-cols-4 items-center gap-4">
-                          </div>
-                        </div>
-                        <SheetFooter>
-                          <SheetClose asChild>
-                            <Button type="submit">Save changes</Button>
-                          </SheetClose>
-                        </SheetFooter>
-                      </SheetContent>
-                </Sheet>
               </div>
             )}
             {activeSection === "courses-events" && (
               <div className="mx-auto max-w-6xl">
-                <h2 className="mb-6 text-2xl font-bold">Courses & Events</h2>
+                <h2 className="mb-6 text-2xl font-bold"> Upcoming Courses & Events</h2>
                 <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                   {events.map((event) => (
                     <Card
@@ -203,33 +166,9 @@ export default function HomePage() {
             )}
             {activeSection === "dashboard" && (
               <div className="mx-auto max-w-6xl">
-                <h2 className="mb-6 text-2xl font-bold">Dashboard</h2>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                  <Card>
-                    <CardHeader className="pb-8">
-                      <CardTitle>Total Courses</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold">12</div>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader className="pb-8">
-                      <CardTitle>Upcoming Events</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold">5</div>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader className="pb-8">
-                      <CardTitle>Enrolled Students</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold">248</div>
-                    </CardContent>
-                  </Card>
-                </div>
+                <main>
+                  <DashBoardForEvent />
+                </main>
               </div>
             )}
           </main>
