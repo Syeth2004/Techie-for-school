@@ -115,7 +115,7 @@ export default function HomePage() {
             {activeSection === "home" && (
               <div className="mx-auto max-w-4xl">
                 <div className="rounded-lg border bg-card p-8 shadow">
-                  <h2 className="text-2xl font-bold">Welcome to the Platform</h2>
+                  <h2 className="text-2xl font-bold">Welcome to TechieSchool</h2>
                   <p className="mt-4 text-muted-foreground">
                     This is the home section of your application. The sidebar navigation allows you to switch between
                     different sections without changing pages.
