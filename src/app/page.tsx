@@ -117,8 +117,7 @@ export default function HomePage() {
                 <div className="rounded-lg border bg-card p-8 shadow">
                   <h2 className="text-2xl font-bold">Welcome to TechieSchool</h2>
                   <p className="mt-4 text-muted-foreground">
-                    This is the home section of your application. The sidebar navigation allows you to switch between
-                    different sections without changing pages.
+                  TechieSchool is an online tech education platform that offers industry-aligned, cohort-based programs designed to accelerate your tech career through hands-on learning and community support. Their courses are led by industry professionals and focus on building real-world projects to ensure job readiness.
                   </p>
                   <p className="mt-4 text-muted-foreground">
                     Try clicking on the different menu items in the sidebar to see the content change.
