@@ -19,6 +19,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from "@/components/ui/separator"
 import * as React from "react"
 import DashBoardForEvent from "@/app/dashboardforevent/page"
+import Link from 'next/link';
+
 
 const events = [
   {
@@ -80,12 +82,6 @@ export default function HomePage() {
                   onClick={() => setActiveSection("dashboard")}>
                   <LayoutDashboard className="h-5 w-5" />
                   <span>Dashboard</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton isActive={activeSection === "courses"} onClick={() => setActiveSection("courses")}>
-                  <BookOpen className="h-5 w-5" />
-                  <span>Courses</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
@@ -154,7 +150,9 @@ export default function HomePage() {
                         </div>
                       </CardContent>
                       <CardFooter>
+                      <Link href="/workshop">
                         <Button className="w-full">View Details</Button>
+                        </Link>
                       </CardFooter>
                     </Card>
                   ))}
