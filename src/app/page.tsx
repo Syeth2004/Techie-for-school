@@ -123,7 +123,9 @@ export default function HomePage() {
                   TechieSchool | Learn AI, Full Stack, and Mobile App Development with Industry Experts
                   </p>
                 </div>
+                <div className="px-0 py-6"><Button><Link href="/workshop">Workshop</Link></Button></div>
               </div>
+              
             )}
             {activeSection === "courses-events" && (
               <div className="mx-auto max-w-6xl">
