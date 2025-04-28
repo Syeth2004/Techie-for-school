@@ -2,15 +2,25 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { UpcomingEvents } from "@/components/common/upcomingevent"
-import type { CalendarEvent } from "@/components/common/eventcalander"
 import { Award } from "lucide-react"
-import eventsData from "@/data/module.json" 
+import eventsData from "@/data/module.json"
 
+type EventType = "live" | "assignment" | "workshop"
 
-  const events: CalendarEvent[] = eventsData.map((events) => ({
-    ...events,
-    date: new Date(events.date),
-  }))
+type CalendarEvent = {
+  id: string
+  title: string
+  date: Date
+  type: EventType
+  description?: string
+}
+
+const events: CalendarEvent[] = eventsData.map((event) => ({
+  ...event,
+  date: new Date(event.date),
+  type: event.type as EventType,
+}))
+
 
 export default function DashboardPage() {
   return (
@@ -24,7 +34,7 @@ export default function DashboardPage() {
                 <Award className="h-8 w-8 text-yellow-500" />
                 <h3 className="text-lg font-medium">Access All Your Earned Certificates</h3>
               </div>
-              <Button variant="outline" className="bg-white text-black hover:bg-grey-100">
+              <Button variant="outline" className="bg-white text-black hover:bg-gray-100">
                 View certificates
               </Button>
             </CardContent>
@@ -42,7 +52,7 @@ export default function DashboardPage() {
                 </div>
                 <CardContent className="p-4">
                   <Badge className="mb-2 bg-gray-100 text-gray-800 hover:bg-gray-100">UPSKILLING</Badge>
-                  <h3 className="text-lg font-bold">2 Day Generative AI Mastermind | 18th - 19th May'25</h3>
+                  <h3 className="text-lg font-bold">2 Day Generative AI Mastermind | 18th - 19th May&apos;25</h3>
                   <p className="text-sm text-muted-foreground mt-2">Mentors from GrowthSchool and Outskill</p>
                 </CardContent>
               </Card>
@@ -56,7 +66,7 @@ export default function DashboardPage() {
                 </div>
                 <CardContent className="p-4">
                   <Badge className="mb-2 bg-gray-100 text-gray-800 hover:bg-gray-100">UPSKILLING</Badge>
-                  <h3 className="text-lg font-bold">3 Day Generative AI Mastermind | 20th - 22th May'25</h3>
+                  <h3 className="text-lg font-bold">3 Day Generative AI Mastermind | 20th - 22th May&apos;25</h3>
                   <p className="text-sm text-muted-foreground mt-2">Mentors from GrowthSchool and Outskill</p>
                 </CardContent>
               </Card>
