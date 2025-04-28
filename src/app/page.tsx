@@ -19,6 +19,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from "@/components/ui/separator"
 import * as React from "react"
 import DashBoardForEvent from "@/app/dashboardforevent/page"
+import Link from "next/link"
 
 const events = [
   {
@@ -83,12 +84,6 @@ export default function HomePage() {
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton isActive={activeSection === "courses"} onClick={() => setActiveSection("courses")}>
-                  <BookOpen className="h-5 w-5" />
-                  <span>Courses</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
                 <SidebarMenuButton
                   isActive={activeSection === "courses-events"}
                   onClick={() => setActiveSection("courses-events")}
@@ -119,7 +114,7 @@ export default function HomePage() {
                     Join us today and unlock your tech potential with TechieSchool! Choose your domain and start learning today.
                   </p>
                 </div>
-                <div className="px-0 py-6"><Button><Link href="/workshop">Workshop</Link></Button></div>
+                <div className="px-0 py-6"><Button><Link href="/workshop1">Workshop</Link></Button></div>
               </div>
               
             )}

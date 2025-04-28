@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Module } from '@/app/workshop/types';
+import { Module } from '@/app/workshop1/types';
 
 type ModuleCardProps = {
   module: Module;
