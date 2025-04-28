@@ -1,5 +1,6 @@
 [
     {
+      "course_id":1,
       "id": "module-1",
       "title": "Module-1",
       "subtitle": "Generative AI Mastermind[Session Links]",
@@ -8,6 +9,7 @@
       "resources": ["Session 1: Introduction to GenAI", "Session 2: Prompt Engineering"]
     },
     {
+      "course_id":1,
       "id": "module-2",
       "title": "Module-2",
       "subtitle": "MasterMinds Resources and Bonuses",
@@ -15,7 +17,7 @@
       "status": "completed",
       "resources": ["Session 1: Resource Guide", "Session 2: Case Studies", "Session 3: Templates"]
     },
-    {
+    { "course_id":2,
       "id": "module-3",
       "title": "Module-3",
       "subtitle": "Make Resources",
@@ -24,6 +26,7 @@
       "resources": ["Session 1: Toolkit", "Session 2: Tutorial Videos"]
     },
     {
+      "course_id":3,
       "id": "module-4",
       "title": "Module-4",
       "subtitle": "Advanced AI Techniques",
