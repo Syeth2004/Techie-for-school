@@ -18,11 +18,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import * as React from "react"
-import Link from "next/link"
 import DashBoardForEvent from "@/app/dashboardforevent/page"
-
-
-
 
 const events = [
   {
@@ -59,7 +55,7 @@ export default function HomePage() {
   return (
     <SidebarProvider>
       <div className="flex min-h-screen">
-        <Sidebar collapsible="icon">
+        <Sidebar>
           <SidebarHeader className="border-b border-sidebar-border">
             <div className="flex h-16 items-center px-8">
               <div className="flex items-center gap-2 font-semibold">
@@ -120,7 +116,7 @@ export default function HomePage() {
                   TechieSchool is an online tech education platform that offers industry-aligned, cohort-based programs designed to accelerate your tech career through hands-on learning and community support. Their courses are led by industry professionals and focus on building real-world projects to ensure job readiness.
                   </p>
                   <p className="mt-4 text-muted-foreground">
-                  TechieSchool | Learn AI, Full Stack, and Mobile App Development with Industry Experts
+                    Join us today and unlock your tech potential with TechieSchool! Choose your domain and start learning today.
                   </p>
                 </div>
               </div>
