@@ -53,7 +53,7 @@ export default function HomePage() {
   return (
     <SidebarProvider>
       <div className="flex min-h-screen">
-        <Sidebar collapsible="icon">
+        <Sidebar>
           <SidebarHeader className="border-b border-sidebar-border">
             <div className="flex h-16 items-center px-8">
               <div className="flex items-center gap-2 font-semibold">
