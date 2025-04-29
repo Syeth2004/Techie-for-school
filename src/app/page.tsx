@@ -20,6 +20,9 @@ import { Separator } from "@/components/ui/separator"
 import * as React from "react"
 import DashBoardForEvent from "@/app/dashboardforevent/page"
 import Link from "next/link"
+import CoursesAndEvents from "./coursesandevents/page"
+
+
 
 const events = [
   {
@@ -117,50 +120,40 @@ export default function HomePage() {
                 </div>
               </div>
             )}
-            {activeSection === "courses-events" && (
-              <div className="mx-auto max-w-6xl">
-                <h2 className="mb-6 text-2xl font-bold">Upcoming Courses & Events</h2>
-                <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                  {events.map((event) => (
-                    <Card
-                      key={event.id}
-                      className="relative overflow-hidden rounded-lg hover:shadow-lg transition-all duration-300"
-                    >
-                      <div className="aspect-video relative">
-                        <img
-                          src={event.image || "/placeholder.svg"}
-                          alt={event.title}
-                          className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                        />
-                        <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
-                          {event.category}
-                        </div>
-                      </div>
-                      <CardHeader>
-                        <CardTitle className="line-clamp-2 text-base sm:text-lg md:text-xl font-semibold">
-                          {event.title}
-                        </CardTitle>
-                        <CardDescription className="text-xs sm:text-sm">{event.date}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="pt-2 pb-4">
-                        <div className="flex items-center justify-between text-xs sm:text-sm">
-                          <span className="text-gray-600">Its Organized by {event.organizer}</span>
-                        </div>
-                      </CardContent>
-                      <CardFooter className="flex justify-between">
-                      <Button asChild className="w-full">
-                      <Link href={`/workshop${event.id}`}>View Details</Link>
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            )}
+            
             {activeSection === "dashboard" && (
               <div className="mx-auto max-w-6xl">
                 <main>
                   <DashBoardForEvent />
+                </main>
+              </div>
+            )}
+            {activeSection === "courses-events" && (
+              <div className="mx-auto max-w-6xl">
+                <main>
+                <CoursesAndEvents events={[
+                {
+                  id: "1",
+                  title: "2 Day Generative AI Mastermind",
+                  date: "19th-20th June 25",
+                  organizer: "Mentors from Techie School and OutSkills",
+                  category: "Workshop"
+                },
+                {
+                  id: "2",
+                  title: "3 Day Generative AI Mastermind",
+                  date: "21th-23th June 25",
+                  organizer: "Mentors from Techie School and OutSkills",
+                  category: "Workshop"
+                },
+                {
+                  id: "3",
+                  title: "5 Day Generative AI Mastermind",
+                  date: "26th-30th June 25",
+                  organizer: "Mentors from Techie School and OutSkills",
+                  category: "Workshop"
+                }
+                ]} />
                 </main>
               </div>
             )}
