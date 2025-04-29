@@ -23,7 +23,7 @@ export default function WorkshopsPage() {
     </header>
 
     <div className="container mx-auto px-10 py-5">
-      <h1 className="text-xl text-gray font-semibold mb-6"><Button variant="ghost" size="icon" className="mr-1 h-2 w-4"><ChevronRight /></Button>2 Day Generative AI Mastermind | 15th - 16th Mar '25</h1>
+      <h1 className="text-xl text-gray font-semibold mb-6"><Button variant="ghost" size="icon" className="mr-1 h-2 w-4"><ChevronRight /></Button>2 Day Generative AI Mastermind | 18th - 19th june '25</h1>
       
       <div className="flex flex-col md:flex-row gap-6">
         

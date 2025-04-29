@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import { BookOpen, Home, LayoutDashboard,} from "lucide-react"
+import { BookOpen, Home, LayoutDashboard } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -25,45 +25,42 @@ const events = [
   {
     id: 1,
     title: "2 Day Generative AI Mastermind",
-    date: "19th-20th April'25",
+    date: "19th-20th June'25",
     category: "UpSkilling",
     image: "https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    organizer: "Mentors from GrowthSchool and OutSkills",
+    organizer: "Mentors from Techie School and OutSkills",
   },
   {
     id: 2,
-    title: "4 Day Generative AI Mastermind",
-    date: "21th-25th April'25",
+    title: "3 Day Generative AI Mastermind",
+    date: "21th-23th june'25",
     category: "UpSkilling",
     image: "https://images.unsplash.com/photo-1669023414171-56f0740e34cd?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    organizer: "Mentors from GrowthSchool and OutSkills",
+    organizer: "Mentors from Techie School and OutSkills",
   },
   {
     id: 3,
     title: "5 Day Generative AI Mastermind",
-    date: "26th-30th April'25",
+    date: "26th-30th june'25",
     category: "UpSkilling",
     image: "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    organizer: "Mentors from GrowthSchool and OutSkills",
+    organizer: "Mentors from Techie School and OutSkills",
   },
 ]
 
 export default function HomePage() {
-  const [date, setDate] = React.useState<Date | undefined>(new Date())
-  
   const [activeSection, setActiveSection] = useState("home")
-
   return (
     <SidebarProvider>
       <div className="flex min-h-screen">
-        <Sidebar>
+        <Sidebar collapsible="icon">
           <SidebarHeader className="border-b border-sidebar-border">
             <div className="flex h-16 items-center px-8">
               <div className="flex items-center gap-2 font-semibold">
-              <Avatar className="h-12 w-12">
-                <AvatarImage src="https://github.com/shadcn.png" /> 
-                <AvatarFallback>TFS</AvatarFallback>
-              </Avatar>
+                <Avatar className="h-12 w-12">
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>TS</AvatarFallback>
+                </Avatar>
               </div>
             </div>
           </SidebarHeader>
@@ -108,19 +105,21 @@ export default function HomePage() {
                 <div className="rounded-lg border bg-card p-8 shadow">
                   <h2 className="text-2xl font-bold">Welcome to Techie School</h2>
                   <p className="mt-4 text-muted-foreground">
-                  TechieSchool is an online tech education platform that offers industry-aligned, cohort-based programs designed to accelerate your tech career through hands-on learning and community support. Their courses are led by industry professionals and focus on building real-world projects to ensure job readiness.
+                    TechieSchool is an online tech education platform that offers industry-aligned, cohort-based
+                    programs designed to accelerate your tech career through hands-on learning and community support.
+                    Their courses are led by industry professionals and focus on building real-world projects to ensure
+                    job readiness.
                   </p>
                   <p className="mt-4 text-muted-foreground">
-                    Join us today and unlock your tech potential with TechieSchool! Choose your domain and start learning today.
+                    Join us today and unlock your tech potential with TechieSchool! Choose your domain and start
+                    learning today.
                   </p>
                 </div>
-                <div className="px-0 py-6"><Button><Link href="/workshop1">Workshop</Link></Button></div>
               </div>
-              
             )}
             {activeSection === "courses-events" && (
               <div className="mx-auto max-w-6xl">
-                <h2 className="mb-6 text-2xl font-bold"> Upcoming Courses & Events</h2>
+                <h2 className="mb-6 text-2xl font-bold">Upcoming Courses & Events</h2>
                 <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                   {events.map((event) => (
                     <Card
@@ -145,11 +144,13 @@ export default function HomePage() {
                       </CardHeader>
                       <CardContent className="pt-2 pb-4">
                         <div className="flex items-center justify-between text-xs sm:text-sm">
-                          <span className="text-gray-600">Organized by {event.organizer}</span>
+                          <span className="text-gray-600">Its Organized by {event.organizer}</span>
                         </div>
                       </CardContent>
-                      <CardFooter>
-                        <Button className="w-full">View Details</Button>
+                      <CardFooter className="flex justify-between">
+                      <Button asChild className="w-full">
+                      <Link href={`/workshop${event.id}`}>View Details</Link>
+                        </Button>
                       </CardFooter>
                     </Card>
                   ))}
