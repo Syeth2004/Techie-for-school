@@ -52,7 +52,7 @@ export default function DashboardPage() {
                 </div>
                 <CardContent className="p-4">
                   <Badge className="mb-2 bg-gray-100 text-gray-800 hover:bg-gray-100">UPSKILLING</Badge>
-                  <h3 className="text-lg font-bold">2 Day Generative AI Mastermind | 18th - 19th May&apos;25</h3>
+                  <h3 className="text-lg font-bold">2 Day  Generative AI Mastermind | 18th - 19th May&apos;25</h3>
                   <p className="text-sm text-muted-foreground mt-2">Mentors from GrowthSchool and Outskill</p>
                 </CardContent>
               </Card>
