@@ -23,7 +23,7 @@ const normalizeEventId = (id: string): Event['id'] => {
     .replace(/[^a-z0-9-]/g, ''); // Remove special characters
   // Map to valid course IDs
   const validIds = ['2-day-generative-ai', '3-day-generative-ai', '5-day-generative-ai'];
-  return validIds.includes(normalized) ? (normalized as Event['id']) : '2-day-generative-ai'// Fallback to a valid ID
+  return validIds.includes(normalized) ? (normalized as Event['id']) : '3-day-generative-ai'// Fallback to a valid ID
 };
 
 // Mock events data aligned with coursesData
