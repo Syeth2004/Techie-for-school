@@ -15,15 +15,37 @@ type Event = {
   image?: string;
 };
 
+// Mapping for invalid/legacy IDs to valid course IDs
+const idMapping: Record<string, Event['id']> = {
+  '1': '2-day-generative-ai', // Map '1' to 2-day course
+  '2': '3-day-generative-ai', // Map '2' to 3-day course
+  '3': '5-day-generative-ai', // Map '3' to 5-day course
+  // Add more mappings as needed
+};
+
 // Utility to normalize event.id to match coursesData keys
 const normalizeEventId = (id: string): Event['id'] => {
   const normalized = id
     .toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with hyphens
     .replace(/[^a-z0-9-]/g, ''); // Remove special characters
+
   // Map to valid course IDs
-  const validIds = ['2-day-generative-ai', '3-day-generative-ai', '5-day-generative-ai'];
-  return validIds.includes(normalized) ? (normalized as Event['id']) : '3-day-generative-ai'// Fallback to a valid ID
+  const validIds = ['2-day-generative-ai', '3-day-generative-ai', '5-day-generative-ai'] as const;
+
+  // If normalized ID is valid, return it
+  if (validIds.includes(normalized as any)) {
+    return normalized as Event['id'];
+  }
+
+  // Check if normalized ID has a mapping
+  if (normalized in idMapping) {
+    return idMapping[normalized];
+  }
+
+  // Fallback or throw error for unmapped IDs
+  throw new Error(`Invalid course ID: ${normalized}. Must be one of ${validIds.join(', ')}`);
+  // Alternatively, return a default: return '2-day-generative-ai';
 };
 
 // Mock events data aligned with coursesData
@@ -31,7 +53,7 @@ const mockEvents: Event[] = [
   {
     id: '2-day-generative-ai',
     title: '2 Day Generative AI Mastermind',
-    date: '15th - 16th Mar 25',
+    date: '18th - 19th june 25',
     organizer: 'Mentors from Techie School and OutSkills',
     category: 'Workshop',
     image: '/images/2-day-generative-ai.jpg', // Example image path
@@ -54,6 +76,10 @@ const mockEvents: Event[] = [
   },
 ];
 
+// Example: Test with an invalid ID
+// const testEvent = { id: '1', title: 'Test', date: 'Test', organizer: 'Test', category: 'Test' };
+// console.log(normalizeEventId(testEvent.id)); // Outputs: '2-day-generative-ai'
+
 export default function CoursesAndEvents({ events = mockEvents }: { events?: Event[] }) {
   return (
     <div className="mx-auto max-w-6xl py-8">
@@ -62,7 +88,7 @@ export default function CoursesAndEvents({ events = mockEvents }: { events?: Eve
         {events.map((event) => {
           // Normalize event.id to ensure it matches coursesData
           const normalizedId = normalizeEventId(event.id);
-          
+
           // Debug: Log event.id and normalizedId
           // console.log(`Event: ${event.title}, Original ID: ${event.id}, Normalized ID: ${normalizedId}`);
 

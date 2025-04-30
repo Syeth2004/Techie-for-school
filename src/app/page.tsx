@@ -24,33 +24,6 @@ import CoursesAndEvents from "./coursesandevents/page"
 
 
 
-const events = [
-  {
-    id: 1,
-    title: "2 Day Generative AI Mastermind",
-    date: "19th-20th June'25",
-    category: "UpSkilling",
-    image: "https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    organizer: "Mentors from Techie School and OutSkills",
-  },
-  {
-    id: 2,
-    title: "3 Day Generative AI Mastermind",
-    date: "21th-23th june'25",
-    category: "UpSkilling",
-    image: "https://images.unsplash.com/photo-1669023414171-56f0740e34cd?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    organizer: "Mentors from Techie School and OutSkills",
-  },
-  {
-    id: 3,
-    title: "5 Day Generative AI Mastermind",
-    date: "26th-30th june'25",
-    category: "UpSkilling",
-    image: "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    organizer: "Mentors from Techie School and OutSkills",
-  },
-]
-
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState("home")
   return (
@@ -133,21 +106,21 @@ export default function HomePage() {
                 <main>
                 <CoursesAndEvents events={[
                 {
-                  id: "1",
+                  id: "2-day-generative-ai",
                   title: "2 Day Generative AI Mastermind",
                   date: "19th-20th June 25",
                   organizer: "Mentors from Techie School and OutSkills",
                   category: "Workshop"
                 },
                 {
-                  id: "2",
+                  id: "3-day-generative-ai",
                   title: "3 Day Generative AI Mastermind",
                   date: "21th-23th June 25",
                   organizer: "Mentors from Techie School and OutSkills",
                   category: "Workshop"
                 },
                 {
-                  id: "3",
+                  id: "5-day-generative-ai",
                   title: "5 Day Generative AI Mastermind",
                   date: "26th-30th June 25",
                   organizer: "Mentors from Techie School and OutSkills",
